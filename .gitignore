@@ -1,0 +1,8 @@
+node_modules
+automation-wdio-8.iml
+.idea
+.tmp
+screenshots
+reports
+*.log
+*.png
