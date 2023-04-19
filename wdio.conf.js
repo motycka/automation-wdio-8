@@ -8,6 +8,7 @@ export const config = {
     ],
     suites: {
         exercise: ['./test/specs/exercise.e2e.js'],
+        homework: ['./test/specs/homework/*.e2e.js'],
         lesson_01: ['./test/specs/examples/lesson-01/**/*.e2e.js'],
         lesson_02: ['./test/specs/examples/lesson-02/**/*.e2e.js'],
         lesson_03: ['./test/specs/examples/lesson-03/**/*.e2e.js'],
@@ -26,8 +27,8 @@ export const config = {
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             args: [
-                '--window-size=1920,1080',
-                '--headless',
+                // '--window-size=1920,1080',
+                // '--headless',
                 '--no-sandbox',
                 '--disable-gpu',
                 '--disable-setuid-sandbox',
@@ -42,7 +43,7 @@ export const config = {
             ]
         }
     }],
-    logLevel: 'info',
+    logLevel: 'silent',
     bail: 0,
     baseUrl: 'ADRESA TESTOVANE APLIKACE',
     waitforTimeout: 10000,

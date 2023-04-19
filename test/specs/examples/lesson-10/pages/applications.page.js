@@ -1,5 +1,4 @@
 import AppPage from './app.page.js';
-import {re} from "@babel/core/lib/vendor/import-meta-resolve.js";
 
 class ApplicationsPage extends AppPage {
 
