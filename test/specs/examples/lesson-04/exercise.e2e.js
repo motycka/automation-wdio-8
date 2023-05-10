@@ -109,8 +109,8 @@ describe('Applications Page', async () => {
         const searchText = 'mar';
 
         await searchInput.setValue(searchText);
-        await loading.waitForDisplayed({ reverse: true});
         await browser.pause(1000);
+        await loading.waitForDisplayed({ reverse: true});
 
         const filteredRows = await $('.dataTable').$('tbody').$$('tr')
         console.log('There are ' + filteredRows.length + ' filtered rows in the table');
