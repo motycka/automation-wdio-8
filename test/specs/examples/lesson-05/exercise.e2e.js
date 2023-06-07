@@ -123,8 +123,8 @@ describe('Applications Page', async () => {
         const unfilteredRowsCount = await table.$$('tr').length;
 
         await searchInput.setValue(searchText);
-        await loading.waitForDisplayed({ reverse: true});
         await browser.pause(1000);
+        await loading.waitForDisplayed({ reverse: true});
 
         const filteredRows = await table.$$('tr');
 

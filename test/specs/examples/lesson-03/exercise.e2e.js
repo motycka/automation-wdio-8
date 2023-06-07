@@ -55,8 +55,8 @@ describe('Login And Applications Page', async () => {
 
         // Bonus - filtrování tabulky
         await $('input[type="search"]').setValue('mar');
-        await $('=Provádím').waitForExist({ reverse: true });
         await browser.pause(1000);
+        await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
 
         const filteredRows = await $('.dataTable').$('tbody').$$('tr')
         console.log('There are ' + filteredRows.length + ' filtered rows in the table');
