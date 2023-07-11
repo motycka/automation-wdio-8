@@ -12,6 +12,8 @@ describe('Czechitas Login Page', async () => {
 
         await browser.pause(5000);
 
+        
+
     });
 
 });
