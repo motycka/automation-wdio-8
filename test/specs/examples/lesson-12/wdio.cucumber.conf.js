@@ -2,6 +2,7 @@ import deepmerge from 'deepmerge';
 import {config as baseConfig} from '../../../../wdio.conf.js';
 
 export const config = deepmerge(baseConfig, {
+    // logLevel: 'trace',
     specs: [
         './features/**/*.feature'
     ],
@@ -25,17 +26,10 @@ export const config = deepmerge(baseConfig, {
     framework: 'cucumber',
     reporters: ['spec'],
     cucumberOpts: {
+        scenarioLevelReporter: false,
         require: [
-            './steps/**/*.js'
+            './**/*.steps.js'
         ],
-        requireModule: [
-            [
-                '@babel/register',
-                {
-                    rootMode: 'upward',
-                    ignore: ['node_modules']
-                }
-            ]
-        ]
+        requireModule: ['@babel/register']
     }
 }, { clone: false })

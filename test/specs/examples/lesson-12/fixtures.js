@@ -1,5 +1,7 @@
 import {username, password, userFullName} from '../../fixtures.js'
 
+export {username, password, userFullName}
+
 export function resolvePlaceholder(placeholderOrValue) {
     switch (placeholderOrValue) {
         case '@USERNAME@':

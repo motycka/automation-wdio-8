@@ -2,9 +2,10 @@
   "name": "czechitas-automation-wdio-8",
   "type": "module",
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/register": "^7.21.0",
+    "@babel/cli": "^7.22.6",
+    "@babel/core": "^7.22.8",
+    "@babel/preset-env": "^7.22.7",
+    "@babel/register": "^7.22.5",
     "@wdio/allure-reporter": "^8.8.0",
     "@wdio/cli": "^8.5.5",
     "@wdio/cucumber-framework": "^8.8.0",
@@ -13,23 +14,26 @@
     "@wdio/selenium-standalone-service": "^8.8.0",
     "@wdio/spec-reporter": "^8.4.0",
     "allure-commandline": "^2.21.0",
-    "chromedriver": "^112.0.0",
+    "chromedriver": "^114.0.2",
     "deepmerge": "^4.3.1",
     "fs": "^0.0.1-security",
-    "geckodriver": "^3.2.0",
+    "geckodriver": "^4.0.4",
     "msedgedriver": "^91.0.0",
     "wdio-chromedriver-service": "^8.1.1",
-    "wdio-edgedriver-service": "^2.1.2",
-    "wdio-geckodriver-service": "^4.1.0",
+    "wdio-docker-service": "^3.2.1",
+    "wdio-edgedriver-service": "^3.0.2",
+    "wdio-geckodriver-service": "^5.0.1",
     "wdio-html-nice-reporter": "^8.1.0",
     "wdio-safaridriver-service": "^2.1.0",
-    "wdio-video-reporter": "^4.0.1"
+    "wdio-video-reporter": "^4.0.3"
   },
   "scripts": {
     "wdio": "wdio run wdio.conf.js",
+    "wdio-docker": "wdio run wdio.docker.conf.js",
     "wdio-hooks": "wdio run test/specs/examples/lesson-06/wdio.hooks.conf.js",
     "wdio-allure": "wdio run test/specs/examples/lesson-06/wdio.allure.conf.js",
     "wdio-htmlreporter": "wdio run test/specs/examples/lesson-06/wdio.htmlreporter.conf.js",
-    "wdio-cucumber": "wdio run test/specs/examples/lesson-12/wdio.cucumber.conf.js"
+    "wdio-cucumber": "wdio run test/specs/examples/lesson-12/wdio.cucumber.conf.js",
+    "wdio-cucumber-docker": "wdio run test/specs/examples/lesson-12/wdio.docker.conf.js"
   }
 }

@@ -12,7 +12,7 @@ When('user enters text into the search field: {string}', async (searchString) =>
 });
 
 Then('user can see between {int} to {int} applications', async (min, max) => {
-    const count = await ApplicationsPage.getTableRows().length
+    const count = (await ApplicationsPage.getTableRows()).length
     await expect(count).toBeGreaterThanOrEqual(min);
     await expect(count).toBeLessThanOrEqual(max);
 });
@@ -35,12 +35,12 @@ Then('all names on applications contain {string}', async (searchString) => {
 });
 
 Then('table shows applications:', async (table) => {
-    (await ApplicationsPage.getTableRows()).forEach(async (row, index) => {
+    for (const row of (await ApplicationsPage.getTableRows())) {
         const actual = await row.getValues();
         const expected = table.hashes()[index];
         await expect(actual.name).toEqual(expected.name);
         await expect(actual.date).toEqual(expected.date);
         await expect(actual.paymentType).toEqual(expected.paymentType);
         await expect(actual.toPay).toEqual(expected.toPay);
-    })
+    }
 });

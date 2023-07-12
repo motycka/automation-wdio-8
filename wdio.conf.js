@@ -1,4 +1,5 @@
 export const config = {
+    // automationProtocol: 'devtools',
     runner: 'local',
     specs: [
         './test/specs/*.e2e.js'
@@ -27,7 +28,7 @@ export const config = {
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             args: [
-                // '--window-size=1920,1080',
+                '--window-size=1920,1080',
                 // '--headless',
                 '--no-sandbox',
                 '--disable-gpu',

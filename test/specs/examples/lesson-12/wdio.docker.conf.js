@@ -14,7 +14,7 @@ export const config = deepmerge(cucumberConfig, {
                 seleniumArgs: ["-port", "4444"],
             }
         }],
-        // 'docker'
+        'docker'
     ],
     dockerOptions: {
         image: 'selenium/standalone-chrome-debug',

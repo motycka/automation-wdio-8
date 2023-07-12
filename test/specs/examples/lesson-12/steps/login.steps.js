@@ -30,15 +30,15 @@ Then('user sees login form with button {word}', async (buttonText) => {
 });
 
 Then('user is logged in as {string}', async (userFullName) => {
-    await expect(LoginPage.getCurrentUser()).toEqual(resolvePlaceholder(userFullName));
+    await expect(await LoginPage.getCurrentUser()).toEqual(resolvePlaceholder(userFullName));
 });
 
 Then('toast message pops up: {string}', async (message) => {
-    await expect(LoginPage.getToastMessage()).toEqual(message);
+    await expect(await LoginPage.getToastMessage()).toEqual(message);
 });
 
 Then('login form error is shown: {string}', async (error) => {
-    await expect(LoginPage.getFieldError()).toEqual(error)
+    await expect(await LoginPage.getFieldError()).toEqual(error)
 });
 
 
