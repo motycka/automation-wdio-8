@@ -1,28 +1,52 @@
-class AppPage {
+import AppPage from './app.page.js';
 
-    get toast() { return $('.toast-message'); }
-    get navbarRight() { return $('.navbar-right'); }
-    get userNameDropdown() { return this.navbarRight.$('[data-toggle="dropdown"]'); }
-    get logoutLink() { return $('#logout-link'); }
+class ApplicationsPage extends AppPage {
 
-    async open() {
-        await browser.url('/');
+    get applicationsLink() { return $('=Přihlášky'); }
+    get searchField() { return $('input[type="search"]'); }
+    get loading() { return $('#DataTables_Table_0_processing'); }
+    get table() { return $('.dataTable'); }
+    get rows() { return this.table.$('tbody').$$('tr'); }
+
+    async goToApplications() {
+        await this.applicationsLink.click();
     }
 
-    async getToastMessage() {
-        return await this.toast.getText();
+    async waitForTableToLoad() {
+        await browser.pause(1000);
+        await this.loading.waitForDisplayed({ reverse: true});
     }
 
-    async logout() {
-        await this.userNameDropdown.click();
-        await this.logoutLink.click();
+    async searchInTable(searchText) {
+        await this.searchField.setValue(searchText);
     }
 
-    async getCurrentUser() {
-        return await this.userNameDropdown.getText();
+    async getTableRows() {
+        await this.waitForTableToLoad();
+        return this.rows.map(async row => {
+            return new TableRow(row);
+        });
     }
-
 }
 
-// NOT a new instance!!!
-export default AppPage;
+// NEW INSTANCE !!!
+export default new ApplicationsPage();
+
+
+class TableRow {
+    constructor (rowElement) {
+        this.rowElement = rowElement;
+    }
+   
+   async getValues() {
+        const cols = await this.rowElement.$$('td');
+        return {
+            name: await cols[0].getText(),
+            date: await cols[1].getText(),
+            paymentType: await cols[2].getText(),
+            toPay: await cols[3].getText()
+        }
+
+    };
+
+}
