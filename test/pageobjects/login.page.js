@@ -29,5 +29,5 @@ class LoginPage extends AppPage {
 
 }
 
-// NEW INSTANCE !!!
+// NEW INS
 export default new LoginPage();
