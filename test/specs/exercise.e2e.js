@@ -9,6 +9,9 @@ describe('Czechitas Login Page', async () => {
         await browser.reloadSession();
 
         await browser.url('/prihlaseni');
+        const windowSize = await browser.getWindowSize();
+        console.log('Windows size: ' + windowSize);
+        await browser.saveScreenshot('login_page.png');
 
         await browser.pause(5000);
 
