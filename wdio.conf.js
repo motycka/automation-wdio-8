@@ -2,7 +2,7 @@ export const config = {
     // automationProtocol: 'devtools',
     runner: 'local',
     specs: [
-        './test/specs/homework/homework.e2e.js'
+        './test/specs/homework/homework_2.e2e.js'
     ],
     exclude: [
         // './test/specs/examples/**/*.js'
