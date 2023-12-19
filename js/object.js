@@ -1,4 +1,5 @@
 const course = {
+    id: 123,
     organizer: 'Czechitas',
     name: 'Automatizace v testování: Webdriver.io',
     teacher: 'Monika',

@@ -8,12 +8,6 @@ export const config = deepmerge(cucumberConfig, {
     restart: true,
     path: '/wd/hub',
     services: [
-        ['selenium-standalone', {
-            logPath: `.tmp/selenium-logs`,
-            seleniumArgs: {
-                seleniumArgs: ["-port", "4444"],
-            }
-        }],
         'docker'
     ],
     dockerOptions: {
