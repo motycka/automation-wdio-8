@@ -2,7 +2,7 @@ export const config = {
     // automationProtocol: 'devtools',
     runner: 'local',
     specs: [
-        './test/specs/homework/homework_2.e2e.js'
+        './test/specs/homework/final.e2e.js'
     ],
     exclude: [
         // './test/specs/examples/**/*.js'
@@ -46,7 +46,7 @@ export const config = {
     }],
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'https://team8-2022brno.herokuapp.com',
+    baseUrl: 'https://team8-2022brno.herokuapp.com/',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
